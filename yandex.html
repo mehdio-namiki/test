@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+
+	        <script src="https://api-maps.yandex.ru/2.1/?apikey=7e0b7ef2-b322-4736-883c-0168d0e89e06
+&lang=en_RU" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="map" style="width: 600px; height: 400px"></div>
+
+
+
+
+<script type="text/javascript">
+
+
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 10
+        }, {
+            searchControlProvider: 'yandex#search'
+        })
+
+
+    myMap.geoObjects
+        .add(new ymaps.Placemark([55.833436, 37.715175], {
+            balloonContent: 'hello its mehdi'
+        }, {
+            preset: 'islands#redSportIcon',
+            iconCaptionMaxWidth: '20'
+        }));
+}
+
+</script>
+</body>
+</html>
