@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<title>Administration Panel</title>
+	<meta name="description" content="Administration Panel.">	
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<base target="_self">
+	<link rel="shortcut icon" href="../assets/images/logo.ico">
+	<link rel="stylesheet" href="../assets/bootstrap4/css/glyphicons.css">
+	<link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap4-editable/css/bootstrap-editable.css">
+
+
+    <script src="../assets/js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="../assets/bootstrap4/js/popper.min.js"></script>
+    <script src="../assets/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../assets/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js"></script>
+    <script src="../assets/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js"></script>
+    <script src="../assets/bootstrap4-editable/js/bootstrap-editable.min.js"></script>
+    <script src="../assets/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="../assets/js/jquery/tableExport.min.js"></script>	
+    <script src="../assets/js/bootstrap-notify.min.js"></script>	
+	<script src="../assets/js/js-xlsx/shim.min.js"></script>
+	<script src="../assets/js/js-xlsx/xlsx.full.min.js"></script>
+
+	<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.getElementsByClassName('needs-validation');
+		// Loop over them and prevent submission
+		var validation = Array.prototype.filter.call(forms, function(form) {
+		  form.addEventListener('submit', function(event) {
+			if (form.checkValidity() === false) {
+			    event.stopImmediatePropagation();
+			    event.preventDefault();
+			    event.stopPropagation();
+			}
+			form.classList.add('was-validated');
+		  }, false);
+		});
+	  }, false);
+	})();
+	</script>	
+
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+		@import url('https://fonts.googleapis.com/css?family=Tajawal:200,300,400,500,700,800,900&subset=arabic');
+		@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&subset=arabic');
+		
+		.tajawal{font-family: 'Tajawal', sans-serif;}
+		#table, #tableresults, #notificationtable, #statisticstable {
+			direction: rtl;
+			font-family: 'Tajawal', sans-serif;
+			font-weight: 600;
+			text-align: right;
+			float: right;
+			font-size: 14px;
+		}
+
+		#newinput {
+			direction: rtl;
+			text-align: right;
+			/*float: right;
+			margin-bottom: 30px;*/
+			font-family: 'Tajawal', sans-serif;
+			font-weight: 600;
+			font-size: 14px;
+			padding: 10px;
+		}
+		
+		.form-control {
+		  text-align: right;
+		}
+		
+		.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+			color: #f8f9fa;
+			background-color: #007bffba;
+			border-color: #dee2e6 #dee2e6 #fff;
+		}
+
+		.nav-tabs .nav-link {
+			border: 1px solid #459eff;
+			border-top-left-radius: .25rem;
+			border-top-right-radius: .25rem;
+		}
+
+		.nav-tabs .nav-link:hover {
+			color: #f8f9fa;
+			background-color: #007bff;
+			border-color: #dee2e6 #dee2e6 #fff;
+			
+		}
+
+		.tab-pane {
+			background-color: #f5f5f55e;
+		}
+		/* Image slider manager */
+
+		.imagePreview {
+			width: 100%;
+			height: 180px;
+			background-position: center center;
+			background:url(../assets/images/no-image.jpg);
+			background-color:#fff;
+			background-size: cover;
+			background-repeat:no-repeat;
+			display: inline-block;
+			box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+		}
+
+		.imgUp
+		{
+		  margin-bottom:15px;
+		}
+		.imgdel
+		{
+			position:absolute;
+		    top:0px;
+		    right:15px;
+			width:30px;
+			height:30px;
+			text-align:center;
+			line-height:30px;
+			background-color: rgba(255, 0, 0, 0.38);
+			cursor: pointer;
+			border-radius: 10%;
+		}
+		.imgdel:hover{
+			background-color: rgba(255, 0, 0, 0.79);
+		}
+		
+		.imgAdd {
+		  width:40px;
+		  height:40px;
+		  border-radius:50%;
+		  background-color:#4bd7ef;
+		  color:#fff;
+		  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+		  text-align:center;
+		  line-height:40px;
+		  margin-top:0px;
+		  cursor:pointer;
+		  font-size:30px;
+		  margin-left: 30px;
+		}
+		.imgAdd:hover {
+		    background-color: #02b3d2;
+			color: #fff;
+			box-shadow: 0px 0px 2px 1px rgba(39, 0, 0, 0.43);
+		}
+		
+		#groupform {
+			margin-top: 10px;
+		}
+		
+		.uploadFile{
+			width: inherit;
+			height: inherit;
+			overflow: hidden;
+			opacity: 0;
+			overflow: hidden;
+		}
+		
+		
+		.allbuttons {
+			align: center;
+			margin-left: auto;
+			margin-right: auto;
+			min-width: 120px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			
+			display:block;
+			box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);			
+		}
+		
+		#toolbar select .btn-info {
+			color: #fff;
+			background-color: #ffffff;
+			border-color: #17a2b8;
+		}
+
+		.btn-file {
+			position: relative;
+			overflow: hidden;
+		}
+		.btn-file input[type=file] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			font-size: 100px;
+			text-align: right;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			outline: none;
+			background: white;
+			cursor: inherit;
+			display: block;
+		}		
+	</style>
+</head>
+<body>
+    <div class="container">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+			<a class="nav-link active" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="true">طلبات الرخص</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">نتائج الطلبات </a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" id="newsslider-tab" data-toggle="tab" href="#newsslider" role="tab" aria-controls="newsslider" aria-selected="false">المستجدات</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notificationstab" role="tab" aria-controls="notificationstab" aria-selected="false">اعلانات</a>
+		  </li>			  
+		  <li class="nav-item">
+			<a class="nav-link" id="statistics-tab" data-toggle="tab" href="#statisticstab" role="tab" aria-controls="statisticstab" aria-selected="false">إحصائيات</a>
+		  </li>		  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="requests" role="tabpanel" aria-labelledby="requests-tab" >
+				<div id="toolbar">
+
+					<select class="btn btn-info btn-outline-dark dropdown-toggle dropdown-toggle-split">
+						<option value="">Export Basic</option>
+						<option value="all">Export All</option>
+						<option value="selected">Export Selected</option>
+					</select>
+					<button id="save" class="btn btn-success" >
+						<i class="glyphicon glyphicon-cloud-upload"></i> Save
+					</button>
+					<button  class="btn btn-primary btn-file" >
+						<i class="glyphicon glyphicon-import"></i> Import
+						<input type="file" id="importrequests" >
+					</button>						
+					<button id="addnewrequests" class="btn btn-primary" >
+						<i class="glyphicon glyphicon-plus-sign"></i> Add
+					</button>	
+					<button id="remove" class="btn btn-danger" disabled>
+						<i class="glyphicon glyphicon-remove"></i> Delete
+					</button>
+					<button id="clear" class="btn btn-danger" >
+						<i class="glyphicon glyphicon-trash"></i> clear
+					</button>				
+				</div>
+				<table id="table" class="table-striped table-bordered table-hover table-sm"
+					   data-toggle="table"
+					   data-show-columns="true"
+					   data-show-toggle="true"
+					   data-show-pagination-switch="true"
+					   data-show-refresh="true"
+					   data-search="true"
+					   data-pagination="true"
+					   data-key-events="true"
+					   data-url="../data/requestsdata.json"
+					   
+					   data-show-header="true" 
+					   data-id-field="id"   
+					   data-pagination-loop="true"  
+					   data-page-size="8" 
+					   data-page-list="[5, 10, 25, 50, 100, ALL]"
+					   
+					   data-show-export="true"
+					   data-click-to-select="true"
+					   data-toolbar="#toolbar"
+					   
+					>		   
+					<thead class="thead-dark">
+					<tr>
+						<th data-field="state" data-checkbox="true" ></th>
+						<th data-field="id" data-sortable="true" data-editable="false" style="min-width:80px;">رقم الملف</th>
+						<th data-field="applicantName" data-sortable="true" data-editable="false">صاحب الطلب</th>
+						<th data-field="projectType" data-sortable="true" data-editable="false">نوع المشروع</th>
+						<th data-field="projectLocation" data-sortable="true" data-editable="false">موقع المشروع</th>
+					</tr>
+					</thead>
+				</table>
+
+				<!-- The Modal -->
+				<div class="modal" id="requestsModal">
+					<div class="modal-dialog">
+					  <div class="modal-content">
+					  
+						<!-- Modal Header -->
+						<div class="modal-header">
+						  <h4 class="modal-title">اضافة طلب جديد</h4>
+						  <button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<form class="needs-validation" id="requestsaddform" >
+							<!-- Modal body -->
+							<div class="modal-body">
+
+								<div id="newinput"  class="form-row" >
+									
+										<div class="col-md-12 mb-3">
+											<label for="idin">رقم الملف</label>
+											<input type="text" id="idin" class="form-control" placeholder="رقم الملف" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">صاحب الطلب</label>
+											<input id="applicantNamein" type="text" class="form-control" placeholder="صاحب الطلب" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">نوع المشروع</label>
+											<input type="text"  id="projectTypein" class="form-control" placeholder="نوع المشروع" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">موقع المشروع</label>
+											<input type="text"  id="projectLocationin" class="form-control" required placeholder="موقع المشروع" required >
+										</div>
+								</div>	
+							</div>
+							
+							<!-- Modal footer -->
+							<div class="modal-footer">
+								<button id="insertrequest" type="submit" class="btn btn-success" >
+									<i class="glyphicon glyphicon-plus-sign"></i> insert
+								</button>			
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							</div>
+						</form>
+					  </div>
+					</div>
+				</div>  
+			</div>
+
+
+			<div class="tab-pane fade" id="results" role="tabpanel" aria-labelledby="results-tab">
+				<div id="toolbarresults">
+					<select class="btn btn-info btn-outline-dark dropdown-toggle dropdown-toggle-split">
+						<option value="">Export Basic</option>
+						<option value="all">Export All</option>
+						<option value="selected">Export Selected</option>
+					</select>
+					<button id="saveresults" class="btn btn-success" >
+						<i class="glyphicon glyphicon-cloud-upload"></i> Save
+					</button>
+					<button  class="btn btn-primary btn-file" >
+						<i class="glyphicon glyphicon-import"></i> Import
+						<input type="file" id="importresults" >
+					</button>						
+					<button id="addnewresults" class="btn btn-primary" >
+						<i class="glyphicon glyphicon-plus-sign"></i> Add
+					</button>					
+					<button id="removeresult" class="btn btn-danger" disabled>
+						<i class="glyphicon glyphicon-remove"></i> Delete
+					</button>
+					<button id="clearresults" class="btn btn-danger" >
+						<i class="glyphicon glyphicon-trash"></i> clear
+					</button>							
+				</div>
+				<table id="tableresults" class="table-striped table-bordered table-hover table-sm"
+					   data-toggle="table"
+					   data-show-columns="true"
+					   data-show-toggle="true"
+					   data-show-pagination-switch="true"
+					   data-show-refresh="true"
+					   data-search="true"
+					   data-pagination="true"
+					   data-key-events="true"
+					   data-url="../data/resultsdata.json"
+					   
+					   data-show-header="true" 
+					   data-id-field="id"   
+					   data-pagination-loop="true"  
+					   data-page-size="8" 
+					   data-page-list="[5, 10, 25, 50, 100, ALL]"
+					   
+					   data-show-export="true"
+					   data-click-to-select="true"
+					   data-toolbar="#toolbarresults"
+					   
+					>		   
+					<thead class="thead-dark">
+					<tr>
+						<th data-field="state" data-checkbox="true"  ></th>
+						<th data-field="id" data-sortable="true" data-editable="false" style="min-width:80px;" >رقم الملف</th>
+						<th data-field="applicantName" data-sortable="true" data-editable="false">صاحب الطلب</th>
+						<th data-field="projectType" data-sortable="true" data-editable="false">نوع المشروع</th>
+						<th data-field="projectResult" data-sortable="true" data-editable="false">النتيجة</th>
+					</tr>
+					</thead>
+				</table>
+				
+				<!-- The Modal -->
+				<div class="modal" id="resultsModal">
+					<div class="modal-dialog">
+					  <div class="modal-content">
+					  
+						<!-- Modal Header -->
+						<div class="modal-header">
+						  <h4 class="modal-title">إضافة نتيجة جديدة</h4>
+						  <button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<form class="needs-validation" id="resultsaddform" >
+							<!-- Modal body -->
+							<div class="modal-body">
+
+								<div id="newinput"  class="form-row" >
+									
+										<div class="col-md-12 mb-3">
+											<label for="idin">رقم الملف</label>
+											<input id="idinresult" type="text" class="form-control" placeholder="رقم الملف" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">صاحب الطلب</label>
+											<input id="applicantNameinresult" type="text" class="form-control" placeholder="صاحب الطلب" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">نوع المشروع</label>
+											<input id="projectTypeinresult" type="text" class="form-control" placeholder="نوع المشروع" required >
+										</div>
+										<div class="col-md-12 mb-3" >
+											<label for="idin">موقع المشروع</label>
+											<input id="projectResultin" type="text" class="form-control" required placeholder="النتيجة" required >
+										</div>
+								</div>	
+							</div>
+							
+							<!-- Modal footer -->
+							<div class="modal-footer">
+								<button id="insertresult" type="submit" class="btn btn-success" >
+									<i class="glyphicon glyphicon-plus-sign"></i> insert
+								</button>			
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							</div>
+						</form>
+					  </div>
+					</div>
+				</div>  
+	
+			</div>
+					
+					
+			<div class="tab-pane fade" id="newsslider" role="tabpanel" aria-labelledby="newsslider-tab" style="background-color:#f5f5f5;">
+			
+				<br>
+				<div class="container">
+				  <div class="row">
+					  <div class="col-sm-4 imgUp" id="imgupload" >
+						<div class="imagePreview btn">
+							<input type="file" class="uploadFile img" value="Upload Photo" id="file" >
+						</div>
+						<div class="form-group" id="groupform" >
+							<input type="text" class="form-control" id="commentbox" aria-describedby="commentboxHelp" placeholder="Enter Comment">
+							<small id="commentboxHelp" class="form-text text-muted"></small>
+						</div>
+						<i class="fa fa-times imgdel"></i>
+					  </div>
+				  <!-- col-2 -->
+				  <i class="fa fa-plus imgAdd"></i>
+				 </div><!-- row -->
+				 <div class="row">
+					<div class="col-sm-3 "> </div>
+					<div class="col-sm-2 ">
+						<button id="savebtn" class="btn btn-success btn-lg allbuttons" >Save</button>
+					</div>	
+					<div class="col-sm-2 ">	
+						<button id="clearbtn" class="btn btn-danger btn-lg allbuttons" >clear</button>
+					</div>
+					<div class="col-sm-2 ">	
+						<button id="cancelbtn" class="btn btn-warning btn-lg allbuttons" >Cancel</button>
+					</div>	
+					<div class="col-sm-3 "> </div>
+				 </div>
+				</div><!-- container -->
+			
+			</div>
+			
+
+
+			<div class="tab-pane fade" id="notificationstab" role="tabpanel" aria-labelledby="notifications-tab" style="background-color:#f5f5f5;">
+
+				<div class="container-fluid">
+
+					<div id="toolbarNotification">
+						<button id="addnewnotifications" class="btn btn-primary" >
+							<i class="glyphicon glyphicon-plus-sign"></i> Add
+						</button>							
+						<button id="savenotifications" class="btn btn-success" >
+							<i class="glyphicon glyphicon-cloud-upload"></i> Save
+						</button>				
+						<button id="removenotification" class="btn btn-danger" disabled>
+							<i class="glyphicon glyphicon-remove"></i> Delete
+						</button>						
+					</div>				
+					
+					<table id="notificationtable"  class="table-striped table-bordered table-hover table-sm"
+					   data-toggle="table"
+					   data-show-columns="true"
+					   data-show-toggle="true"
+					   data-show-pagination-switch="true"
+					   data-show-refresh="true"
+					   data-search="true"
+					   data-pagination="true"
+					   data-key-events="true"
+					   
+					   data-show-header="true" 
+					   data-id-field="id"   
+					   data-pagination-loop="true"  
+					   data-page-size="8" 
+					   data-page-list="[5, 10, 25, 50, 100, ALL]"
+					   
+					   data-show-export="true"
+					   data-click-to-select="true"
+					   data-toolbar="#toolbarNotification"						
+					   data-url="../data/notificationsdata.json" 
+
+						>
+						<thead class="thead-dark">
+					
+							<tr>
+								<th data-field="state" data-checkbox="true"  ></th>
+								<th data-field="NotificationTitle"  data-sortable="true" data-editable="true" >عنوان الاعلان</th>
+								<th data-field="NotificationTime" data-sortable="true" data-editable="true" >مدة الإعلان</th>
+							</tr>
+							
+						</thead>
+					</table>
+
+
+					  <!-- The Modal -->
+					  <div class="modal" id="notificationModal">
+						<div class="modal-dialog">
+						  <div class="modal-content">
+							<!-- Modal Header -->
+							<div class="modal-header">
+							  <h4 class="modal-title">إضافة إعلان جديد</h4>
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							
+							<!-- Modal body -->
+							<form class="needs-validation" id="notificationform" >
+								<div class="modal-body" id="newinput" >
+									<div class="col-md-12 mb-3">
+										<label for="idin">عنوان الاعلان</label>
+										<input id="notificationtitlemodal" type="text" class="form-control" placeholder="عنوان الاعلان" required >
+										<div class="valid-feedback">Looks good!</div>
+									</div>
+									<div class="col-md-12 mb-3" >
+										<label for="idin">مدة الإعلان</label>
+										<input id="notificationtimemodal" type="number" class="form-control" placeholder="مدة الإعلان" required >
+									</div>
+								</div>
+								
+								<!-- Modal footer -->
+								<div class="modal-footer">
+									<button type="submit" id="insertnewnotification" class="btn btn-success" >
+										<i class="glyphicon glyphicon-plus-sign"></i> Insert
+									</button>									
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+								</div>
+							</form>
+						  </div>
+						</div>
+					   </div>
+
+				</div>
+
+			</div>
+
+			
+			<div class="tab-pane fade" id="statisticstab" role="tabpanel" aria-labelledby="statistics-tab" style="background-color:#f5f5f5;">
+
+				<div class="container-fluid">
+
+					<div id="toolbarStatistics">
+						<button id="showallstatistics" class="btn btn-primary" >
+							<i class="glyphicon glyphicon-th-list"></i> Show All
+						</button>							
+						<button id="savestasticsnames" class="btn btn-success" >
+							<i class="glyphicon glyphicon-cloud-upload"></i> Save
+						</button>	
+						<button id="clearstastics" class="btn btn-danger" >
+							<i class="glyphicon glyphicon-trash"></i> Clear
+						</button>						
+					</div>				
+					
+					<table id="statisticstable"  class="table-striped table-bordered table-hover table-sm"
+					   data-toggle="table"
+					   data-show-columns="true"
+					   data-show-toggle="true"
+					   data-show-pagination-switch="true"
+					   data-show-refresh="true"
+					   data-search="true"
+					   data-pagination="true"
+					   data-key-events="true"
+					   
+					   data-show-header="true" 
+					   data-id-field="LocationName"   
+					   data-pagination-loop="true"  
+					   data-page-size="8" 
+					   data-page-list="[5, 10, 25, 50, 100, ALL]"
+					   
+					   data-show-export="true"
+					   data-click-to-select="true"
+					   data-toolbar="#toolbarStatistics"						
+
+						>
+						<thead class="thead-dark">
+					
+							<tr>
+								<th data-field="LocationName"  data-sortable="true" data-editable="true" >Location Name</th>
+								<th data-field="LastRefreshed" data-sortable="true" data-editable="false" >Last Refreshed</th>
+								<th data-field="LastChecked"  data-sortable="true" data-editable="false">Last Checked</th>
+								<th data-field="status"   data-sortable="true" data-editable="false" >Refresh Status</th>
+								<th data-field="UserAgent"  data-sortable="true" data-editable="false" >User Agent</th>
+							</tr>
+							
+						</thead>
+					</table>
+					
+
+				</div>
+
+			</div>
+				
+		</div>	
+    </div>
+	<script type="text/javascript" >adminindex(); slidermanger(); statisticsmanager();</script>
+
+
+</body>
+</html>

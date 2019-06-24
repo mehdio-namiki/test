@@ -1,0 +1,661 @@
+<html>
+<head>
+	<title>Documents Slider</title>
+	<meta name="description" content="Documents Slider.">	
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<base target="_self">
+	<link rel="shortcut icon" href="assets/images/logo.ico">
+	
+	<link rel="stylesheet" href="assets/bootstrap4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	
+	<style type="text/css" >
+		@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+		@import url('https://fonts.googleapis.com/css?family=Tajawal:200,300,400,500,700,800,900&subset=arabic');
+		@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&subset=arabic');
+		
+		.container-fluid {
+			background-color: #f8f9fa;
+			direction: rtl;
+			font-family: 'Tajawal', sans-serif;
+			font-weight: 500;
+			font-size: 14px;
+		}
+		.border {
+			padding: 0;
+			border-width:2px !important;
+		}
+		.border-top {
+			padding: 2;
+			border-width:2px !important;
+		}
+		.carousel-item.active,
+		.carousel-item-next,
+		.carousel-item-prev{
+			display:block;
+		}
+		h4 {
+			direction: rtl;
+			text-align: center;
+			margin: 0;
+			font-family: 'El Messiri', sans-serif;
+			font-weight: 500;
+			margin : 0px;
+			color:#28a745;
+			font-size: 22px;
+		}
+		h5{
+			font-family: 'El Messiri', sans-serif;
+			font-weight: 500;
+			padding : 0px;
+			color :#dc3545;
+		}
+		li {
+			text-align: right;
+			
+		}
+		i {
+			position: unset !important;
+		}
+		
+		body {
+			    overflow: hidden;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border p-2" >
+				 <h4>الحالة المدنية: الوثائق المطلوبة</h4>
+				<div class="carousel-item active text-center ">
+				</div>
+				
+				<div id="carouselContent1" class="carousel slide" data-ride="carousel" data-interval="10000">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active text-center ">
+							 
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner" >
+										<h5>شهادة تعدد الزوجات</h5>
+										
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> تصريح بالشرف </li>
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الزواج </li>
+										</ul>
+									</div>
+								</div>
+						
+							</div>
+							
+						</div>
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>أحكام الوفاة</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمتوفى </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة موجزة من عقد اإلزدياد للمتوفى </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الزواج </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>التصريح بالوفاة</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الوفاة  </li>
+										  <li><i class="fa-li fa fa-check-square"></i> <span> 02 </span> نسخ من البطافة الوطنية للمتوفى </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمصرح </li>
+										  <li><i class="fa-li fa fa-check-square"></i> <span> 02 </span> عقود اإلزدياد للمتوفى </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الزواج مصادق عليه </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة إثبات الهوية الموحدة</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمعني باألمر </li>								
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من الوثيقة التي تحمل الخطأ </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من الوثيقة للإسم الصحيح </li>
+										  <li><i class="fa-li fa fa-check-square"></i> <span> 02 </span> شهود لهم صلة وثيفة بالمعني بلأمر </li>
+										</ul>								
+									</div>
+								</div>					
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة الحياة الفردية والجماعية</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمعني بلأمر </li>
+										  <li><i class="fa-li fa fa-check-square"></i> عقد الإزدياد لأطفال أو الحالة المدنية </li>
+										</ul>								
+									</div>
+								</div>					
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>أحكام الولادة</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للزوجين </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة موجزة من عقد الأزدياد للزوجين باللغة العربية والفرنسية </li>
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة الزوجة الوحيدة</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>								
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطافة الوطنية للزوج </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الزواج </li>
+										</ul>								
+									</div>
+								</div>				
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة عدم الطلاق</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> تصريح بالشرف </li>
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الزواج </li>
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة التحمل العائلي</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> تصريح بالشرف </li>
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمعني بالأمر </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية للمتحمل به أو عقد الإزدياد الأطفال </li>
+										</ul>								
+									</div>
+								</div>						
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة العزوبة</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> تصريح بالشرف </li>
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> صورة للمعني بالأمر </li>
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شهادة عدم الزواج</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> تصريح بالشرف </li>
+										  <li><i class="fa-li fa fa-check-square"></i> بحث المقدم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من البطاقة الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد الإلزدياد بالنسبة للمطلقة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من عقد وفاة الزوج للأرملة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> xxxxxxxxxxxxx </li>
+										</ul>								
+									</div>
+								</div>						
+							</div>
+						</div>						
+					</div>
+					<a class="carousel-control-prev" href="#carouselContent1" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselContent1" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 border p-2" >
+				 <h4>التعمير و السكن : الوثائق المطلوبة</h4>
+				<div class="carousel-item active text-center ">
+				</div>
+				
+				<div id="carouselContent2" class="carousel slide" data-ride="carousel" data-interval="10000">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active text-center ">
+							 
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner" >
+										<h5> البنايات التي تتكون من طابقين أو فيلا </h5>
+										
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من رخصة البناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة المطابقة من المهندس المعماري </li>
+										  <li><i class="fa-li fa fa-check-square"></i> الاقرار الضريبي بالنسبة للألراض العارية (TNB) </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من التصميم المرخص </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الملكية حديثة العهد </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>البنايات التي تتكون من ثلاث طوابق (R+3)</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من مقرر الترخيص بالبناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من تصاميم البناء المرخصة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة المطابقة ونهاية الأشغال للمشروع في 3 نظائر طبقا للدورية الوزارية المشرتكة عدد 2911 بتاريخ 12 مايو 2008 </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة المطابقة مسلمة من طرف المهندس المعماري المرشف على المشروع </li>
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة نهاية الأشغال مسلمة من طرف مكتب الدراسات </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة نهاية الأشغال مسلمة من طرف مكتب المراقبة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة نهاية الأشغال مسلمة من طرف مكتب الدراسات للتحاليل و التجارب </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة ابراء من المستحقات الجبائية المترتبة عن استغلال الملك العمومي لأغراض البناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من الرسم على الأراضي الحضارية الغير مبنية </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>							
+						
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>إيداع ملف سكنى او فيلا او عمارة (R+3)</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i>  10 نسخ من التصاميم </li>								
+										  <li><i class="fa-li fa fa-check-square"></i> طلب الرخصة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الملكية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> التصميم الطبوغرافي </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة رخص البناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة البناء المنجز </li>
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>					
+							</div>
+						</div>							
+						
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة بخصوص الواجب المترتب على المرشوع </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة بخصوص إحتلال الملك العمومي </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> توصيل الضريبة على الأرض الغير مبنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> قانون الشركة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> دفتر الورش </li>
+										</ul>								
+									</div>
+								</div>					
+							</div>
+						</div>						
+						
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>إيداع ملف التهيئة</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> 10 نسخ من التصاميم </li>
+										  <li><i class="fa-li fa fa-check-square"></i> طلب الرخصة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الملكية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> التصميم الطبوغرافي </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة رخص البناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة البناء المنجز </li>	
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>										  
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> عقد المهندس </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة بخصوص الواجب المترتب على المشروع </li>
+										  <li><i class="fa-li fa fa-check-square"></i> وثيقة بخصوص احتلال الملك العمومي </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> قانون الشركة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> عقد كراء‏ </li>	
+										</ul>								
+									</div>
+								</div>				
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>رخص الاشغال الطفيفة</h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> طلب المصادق عليه في اسم رئيس مقاطعة جليز </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الملكية حديثة من املحافظة العقرية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> في حال الكراء: عقدة الكراء مع موافقة صاحب المصادق عليها </li>
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> في حالة الدواوير: شهادة السكنة حديثة لأجل الاصالح </li>
+										  <li><i class="fa-li fa fa-check-square"></i> مصادقة السانديك بالنسبة للعمارات </li>
+										  <li><i class="fa-li fa fa-check-square"></i> رخصة السكن (البنايات الحديثة) </li>
+										  <li><i class="fa-li fa fa-check-square"></i> قانون الرشكة. يحدد المسير في (حالة الشراكات) </li>										  
+										</ul>								
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>شواهد الربط</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> طلب في اسم رئيس مجلس مقاطعة جليز </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة بطاقة التعريف الوطنية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة السكنى الحديثة لأجل الربط بالكهرباء او الماء الصالح للشرب </li>
+										</ul>								
+									</div>
+								</div>						
+							</div>
+						</div>	
+						
+						<div class="carousel-item text-center ">
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5>مصلحة الاغراس</h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> طلب إزالة نخلة من اجل البناء في اسم رئيس مقاطعة جليز </li>
+										  <li><i class="fa-li fa fa-check-square"></i> تصميم مصادق عليه </li>
+										  <li><i class="fa-li fa fa-check-square"></i> رخصة البناء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> طلب تزويد بالأغراس في اسم رئيس جمعية جليز </li>
+										  <li><i class="fa-li fa fa-check-square"></i> طلب التشجير امام المحل في اسم رئيس مقاطعة جليز </li>
+										  <li><i class="fa-li fa fa-check-square"></i> طلب عروض من اجل الاستفادة من الصفقة </li>										  
+										</ul>								
+									</div>
+								</div>						
+							</div>
+						</div>	
+					</div>
+					<a class="carousel-control-prev" href="#carouselContent2" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselContent2" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border p-2" >
+		
+				<h4>الرخص الاقتصادية: الوثائق المطلوبة</h4>
+				<div class="carousel-item active text-center ">
+				</div>
+				
+				<div id="carouselContent3" class="carousel slide" data-ride="carousel" data-interval="10000">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active text-center ">
+							 
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner" >
+										<h5 style="margin-left:12px;margin-right:12px;">  ترخيص ذو طابع اقتصادي بالنسبة ل: المخبزات-المطاعم المصينات-المستودعات-الآفرنة-الحمامات-مأكولات خفيفة-المقاهى و SPA </h5>
+										
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية مصادق عليها أو بطاقة الاقامة مصادق عليها بالنسبة للآجانب. </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من التصميم الاصلي للبناية وبالنسبة للعمارات يطلب راي مصلحة التعمير </li>
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										 </ul>
+									</div>
+								</div>
+						
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> اخر وصل للكراء لا يتعدى ثلاتة اشهر بالنسبة للمكتري </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من شهادة الملكية او ما يثبت التصرف او عقد الكراء مصحوبا ب "الملكية" يتضمن نوع النشاط مع موافقة المكري على النشاط المراد مزاولته اذا تضمن عقد الكراء الموافقة على كراء محل ذو طابع تجاري فإنها تعتير موافقة صريحة من المالك بمزاولة مختلف الانشطة التجارية </li>										  
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>						
+
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من تصميم التهيئة مصادق عليه من مصلحة التعمير بالمقاطعة </li>
+										  <li><i class="fa-li fa fa-check-square"></i> 3 صور فوتوغرافية بالنسبة للأشخاص الذاتيين </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة المطابقة او رخصة السكن </li>										
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من القانون الاساسي و السجل التجاري بالنسبة للشركات </li>
+										  <li><i class="fa-li fa fa-check-square"></i> 160,00 درهم واجب البحث </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5> ترخيص ذو طابع اقتصادي بالنسبة ل : الحلاقة و التجميل- المحلبات-الجزارة </h5>
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية مصادق عليها أو بطاقة الاقامة مصادق عليها بالنسبة للأجانب </li>
+										  <li><i class="fa-li fa fa-check-square"></i> اخر وصل للكراء لا يتعدى ثلاتة اشهر بالنسبة للمكتري </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من تصميم التهيئة موقع عليه من طرف مهندس مختص </li>
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من شهادة الملكية او ما يثبت التصرف او عقد الكراء مصحوبا ب "الملكية" يتضمن نوع النشاط مع موافقة المكري على النشاط المراد مزاولته اذا تضمن عقد الكراء الموافقة على كراء محل ذو طابع تجاري فإنها تعبر موافقة صريحة من المالك بمزاولة مختلف الانشطة التجارية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> 3 صور فوتوغرافية بالنسبة للأشخاص الذاتيين </li>	
+										  <li style="margin:-10px; margin-right:20px; font-size: 30px;">.....</li></li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>							
+
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<ul class="fa-ul">
+										  <li style="margin:-10px; margin-right:20px;  font-size: 30px;">.....</li></li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة المطابقة او رخصة السكن </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من القانون الاساسي و السجل التجاري بالنسبة للشركات </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من الدبلوم بالنسبة لنشاط الحلاقة والتجميل </li>
+										  <li><i class="fa-li fa fa-check-square"></i> 160,00 درهم واجب البحث </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>
+						
+						<div class="carousel-item text-center ">
+							
+							 <div id="textSlider" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slideCol border-top">
+									<div class="inner">
+										<h5> طلب رخصة استغلال المك العمومي </h5>
+
+										<ul class="fa-ul">
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من بطاقة التعريف الوطنية أو بطاقة الإقامة مصادق عليها بالنسبة للأجانب </li>
+										  <li><i class="fa-li fa fa-check-square"></i> شهادة الملكية لا تتجاوز 3 أشهر أو عقد الكراء </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من الرخصة الاقتصادية </li>
+										  <li><i class="fa-li fa fa-check-square"></i> نسخة من القانون الأساسي و السجل التجاري بالنسبة للشركات </li>
+										  <li><i class="fa-li fa fa-check-square"></i> الرسم اطهني </li>
+										</ul>								
+									</div>
+								</div>
+						
+							</div>
+						</div>	
+						
+					</div>
+					<a class="carousel-control-prev" href="#carouselContent3" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselContent3" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="assets/bootstrap4/js/popper.min.js"></script>
+    <script src="assets/bootstrap4/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" >
+			$(window).ready(function(){
+			
+				$(".carousel-control-prev").click();
+		});
+		
+
+	</script>	
+</body>
+</html>

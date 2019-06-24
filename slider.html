@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>News Slider</title>
+		<meta name="description" content="News Slider.">		
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<base target="_self">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="assets/images/logo.ico">
+		
+		<link rel="stylesheet" href="assets/bootstrap4/css/glyphicons.css">
+		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/bootstrap4/css/bootstrap.min.css">
+
+		<script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+		<script src="assets/bootstrap4/js/popper.min.js"></script>
+		<script src="assets/bootstrap4/js/bootstrap.min.js"></script>
+		
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+			@import url('https://fonts.googleapis.com/css?family=Tajawal:200,300,400,500,700,800,900&subset=arabic');
+			@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&subset=arabic');
+			
+			.carousel-item {
+			  height: 90%;
+			  //background: no-repeat center center scroll;
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			}
+			
+			#maintitle h4 {
+				direction: rtl;
+				text-align: center;
+				font-family: 'El Messiri', sans-serif;
+				font-weight: 500;
+				margin-top : 2px;
+				font-size: 1.5rem !important;
+				color:#28a745;
+			}
+			
+			#carouselIndicators div h5 {
+				direction: rtl;
+				text-align: center;
+				font-family: 'El Messiri', sans-serif;
+				text-align: center;
+				font-weight: 500;
+				opacity: 0.8;
+				border-radius: 10px;			
+				padding: 10px;
+				box-shadow: 0px 4px 6px 6px rgba(0,0,0,0.2);
+				font-size: medium;
+			}
+			
+			.carousel img {
+				height: 100%!important;
+			}
+			
+			.carousel-caption {
+				right: 4%;
+				left: 4%;
+				}
+				
+			body {
+			    overflow: hidden;
+			}
+		</style>
+		<script>sliderview()</script>
+	</head>
+<body>
+	<div class="container-fluid">
+		<div id="maintitle" >
+			<h4 style="padding-top: 5px;">مستجدات مجلس مقاطعة جليز</h4>
+		</div>
+		<div>
+			<div id="carouselIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
+			  <ol class="carousel-indicators">
+			  </ol>
+			  <div class="carousel-inner">
+
+			  </div>
+			  
+			  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>	
+				
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<title>Construction authorizations</title>
+	<meta name="description" content="Construction authorizations.">	
+	<meta http-equiv="Expires" content="-1">	
+	<meta http-equiv="Cache-control" content="no-cache">	
+	<meta http-equiv="pragma" content="no-cache">
+	<base target="_self">
+	<link rel="shortcut icon" href="assets/images/logo.ico">
+	<link rel="stylesheet" href="assets/bootstrap4/css/glyphicons.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-table/bootstrap-table.min.css">
+	
+    <script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="assets/bootstrap4/js/popper.min.js"></script>
+    <script src="assets/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-table/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="assets/js/datejs/date-ar-MA.js"></script>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+		@import url('https://fonts.googleapis.com/css?family=Tajawal:200,300,400,500,700,800,900&subset=arabic');
+		@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&subset=arabic');
+		
+		body {
+			overflow: hidden;
+		}
+		
+		table {
+			direction: rtl;
+			font-family: 'Tajawal', sans-serif;
+			font-weight: 500;
+			font-size: 14px;
+		}
+		h4, h5{
+			direction: rtl;
+			text-align: center;
+			margin: 5;
+			font-family: 'El Messiri', sans-serif;
+			font-weight: 500;
+
+		}
+		h4 {
+			color:#28a745;
+		}
+		h5 {
+			color :#dc3545;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div id="requestsdata">
+			<h4>الشباك الوحيد لرخص البناء</h4>
+			<h5 id="detailstitle" > لائحة الملفات المدرجة ليوم الثلاثاء <span id="tuesdaydate"></span></h5>
+		<div class="container-fluid">
+
+			<table id="table" class="table-striped table-bordered table-hover table-sm"  
+				data-show-header="true" 
+				data-pagination="true"
+				data-id-field="id"   
+				data-pagination-loop="true"  
+				data-page-size="5" 
+				data-page-list="[5, 10, 25,50, 100, ALL]" 
+				data-only-info-pagination="true" 
+				data-smart-display="true" 
+
+				>
+				<thead class="thead-dark">
+					<tr>
+						<th data-field="id">رقم الملف</th>
+						<th data-field="applicantName">صاحب الطلب</th>
+						<th data-field="projectType">نوع المشروع</th>
+						<th data-field="projectLocation"  >موقع المشروع</th>
+						<th data-field="projectResult" >النتيجة</th>
+					</tr>
+				</thead>
+			</table>
+			
+
+		</div>
+	</div>
+
+	<script type="text/javascript" >constructionauth();</script>
+</body>
+</html>

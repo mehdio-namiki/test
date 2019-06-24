@@ -1,0 +1,12 @@
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+RewriteEngine on
+RewriteRule ^isrefresh$ admin/savedata.php?IsRefresh [NC]
+
+#<FilesMatch "\.(php4|php5|php7|php3|php2|php|phtml)$">
+#	AddHandler application/x-httpd-php56
+#</FilesMatch>
