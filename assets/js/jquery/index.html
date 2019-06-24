@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<title>Main News App</title>
+	<meta name="description" content="Main News App.">
+	<link rel="shortcut icon" href="assets/images/logo.ico">	
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<base target="_self">
+
+	<link rel="stylesheet" href="assets/bootstrap4/css/glyphicons.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bootstrap4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	
+    <script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="assets/bootstrap4/js/popper.min.js"></script>
+    <script src="assets/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-notify.min.js"></script>		
+	
+
+	<style>
+		body {
+			overflow: hidden !important;
+		}
+		
+		.border {
+			padding: 0;
+			border-width:2px !important;
+		}
+		
+		.alert-danger {
+			color: #fff !important;
+			background-color: #dc3545 !important;
+			border-color: #dc3545 !important;
+			opacity: 0.7;
+			/*
+			width: 140px;
+			margin-left: -10px !important;
+			margin-top: -10px !important;
+			*/
+		}		
+
+
+		.alert-info {
+			color: #032b31;
+			background-color: #00408545;
+			border-color: #9fcdff;
+		}
+				
+		.alert {
+			position: relative;
+			padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+			margin-bottom: 1rem;
+			border: 1px solid #00408536;
+			border-radius: 0.25rem;
+			text-align: center;
+		}
+		#notifyURL {
+			min-width: 550px;
+			font-weight: 400;
+			font-size: 14px;
+			box-shadow: 0px 4px 6px 6px rgba(0,0,0,0.2);
+		}
+		#notifyConnection {
+			width: 120px;
+			margin-left: -10px !important;
+			margin-top: -10px !important;
+			box-shadow: 0px 4px 6px 6px rgba(0,0,0,0.2);
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid" >
+	<div class="row border ">
+		<div class="col border" id="" style="">
+			<iframe id="constructionauthorizations" src="construction-authorizations.html?updated=t" style="width: 49vw;height: 60vh;position: relative;"  frameborder="0" allowfullscreen></iframe>
+		</div>	
+		<div class="col border" id="" style="">
+			<iframe id="slider" src="slider.html?updated=t" style="width: 49vw;height: 60vh;position: relative; float: right;"  frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class="row border" >
+		<iframe id="documentsslider" src="documents-slider.html?updated=t" style="width: 100vw;height: 38vh;position: relative;"  frameborder="0" allowfullscreen></iframe>
+	</div>	
+</div>	
+
+	<script type="text/javascript" >mainpagejs();</script>
+</body>
+</html>	
